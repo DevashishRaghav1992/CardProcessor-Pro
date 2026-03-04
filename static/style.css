@@ -1,0 +1,202 @@
+:root {
+    --bg-color: #0f172a;
+    --surface-color: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --border-color: #334155;
+    --success-color: #10b981;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 400px),
+                      radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.1), transparent 400px);
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.drop-zone {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius);
+    padding: 4rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(51, 65, 85, 0.2);
+}
+
+.drop-zone:hover, .drop-zone.dragover {
+    border-color: var(--accent-color);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.upload-icon {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.drop-zone:hover .upload-icon {
+    transform: translateY(-5px);
+}
+
+.drop-text {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.drop-text span {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.file-list {
+    margin-top: 2rem;
+}
+
+.file-list h3 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+#files-preview {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+#files-preview li {
+    background: var(--surface-color);
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.primary-btn, .secondary-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background: var(--accent-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+}
+
+.secondary-btn {
+    background: var(--surface-color);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    margin-top: 1rem;
+}
+
+.secondary-btn:hover {
+    background: var(--border-color);
+}
+
+.loading-state, .result-state {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1.5rem auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.result-state h3 {
+    color: var(--success-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-state p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.download-btn {
+    text-decoration: none;
+    margin-bottom: 1rem;
+}

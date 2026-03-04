@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardProcessor-Pro | Batch Card Processing</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CardProcessor<span class="highlight">-Pro</span></h1>
+            <p>Batch upload raw card images to automatically crop, upscale, and redact names.</p>
+        </header>
+
+        <main>
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="upload-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    <p class="drop-text">Drag & Drop images here, or <span>Browse</span></p>
+                    <input type="file" id="file-input" multiple accept="image/*" hidden>
+                </div>
+            </div>
+
+            <div id="file-list" class="file-list hidden">
+                <h3>Selected Files (<span id="file-count">0</span>)</h3>
+                <ul id="files-preview"></ul>
+                <button id="process-btn" class="primary-btn">Process Images</button>
+            </div>
+
+            <div id="loading-state" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>Processing images using AI models... This may take a minute.</p>
+            </div>
+
+            <div id="result-state" class="result-state hidden">
+                <h3>✅ Processing Complete</h3>
+                <p>Your processed cards have been uniformly resized, upscaled, and redacted.</p>
+                <a id="download-btn" class="primary-btn download-btn">Download Final ZIP</a>
+                <button id="reset-btn" class="secondary-btn">Process More</button>
+            </div>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Dependencies
+venv/
+__pycache__/
+*.pyc
+
+# Models (will be downloaded at runtime)
+*.pb
+*.onnx
+weights/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Debug & deploy scripts
+debug_*.py
+debug_*.jpg
+deploy_*.py
+test.jpg
+render.yaml
+
+# Agent config
+.gemini/
+.agents/

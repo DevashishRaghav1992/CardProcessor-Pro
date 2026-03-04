@@ -1,0 +1,21 @@
+# Dependencies
+venv/
+__pycache__/
+*.pyc
+
+# Models (downloaded at runtime)
+*.pb
+*.onnx
+weights/
+.u2net/
+
+# Environment secrets
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Debug files
+debug_*.jpg
+test.jpg
